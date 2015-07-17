@@ -23,7 +23,7 @@ public class Lesson1 {
 		System.out.println("Running exercise 1 solution...");
 		exercise1(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 		System.out.println("Running exercise 2 solution...");
-		exercise2();
+		exercise2(new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot")));
 		System.out.println("Running exercise 3 solution...");
 		exercise3();
 		System.out.println("Running exercise 4 solution...");
@@ -55,10 +55,9 @@ public class Lesson1 {
 	 * Exercise 2
 	 * 
 	 * Remove the words that have odd lengths from the list.
+	 * @param words
 	 */
-	private void exercise2() {
-		List<String> list = new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
-
+	private void exercise2(List<String> words) {
 		/* YOUR CODE HERE */
 	}
 
