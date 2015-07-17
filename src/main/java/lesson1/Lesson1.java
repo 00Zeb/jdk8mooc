@@ -46,8 +46,9 @@ public class Lesson1 {
 	 * @param strings
 	 */
 	private String exercise1(List<String> words) {
-
-		return "";
+		StringBuilder sb = new StringBuilder();
+		words.forEach(element -> sb.append(element.charAt(0)));
+		return sb.toString();
 	}
 
 	/**
