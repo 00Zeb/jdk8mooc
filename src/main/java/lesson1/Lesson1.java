@@ -21,7 +21,7 @@ public class Lesson1 {
 	public void runExercises() {
 		System.out.println("JDK 8 Lambdas and Streams MOOC Lesson 1");
 		System.out.println("Running exercise 1 solution...");
-		exercise1();
+		exercise1(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
 		System.out.println("Running exercise 2 solution...");
 		exercise2();
 		System.out.println("Running exercise 3 solution...");
@@ -43,10 +43,11 @@ public class Lesson1 {
 	 * 
 	 * Create a string that consists of the first letter of each word in the
 	 * list of Strings provided.
+	 * @param strings
 	 */
-	private void exercise1() {
-		List<String> list = Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot");
-		/* YOUR CODE HERE */
+	private String exercise1(List<String> words) {
+
+		return "";
 	}
 
 	/**
