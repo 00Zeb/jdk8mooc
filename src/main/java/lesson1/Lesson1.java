@@ -58,7 +58,7 @@ public class Lesson1 {
 	 * @param words
 	 */
 	private void exercise2(List<String> words) {
-		/* YOUR CODE HERE */
+		words.removeIf(each -> each.length() % 2 != 0);
 	}
 
 	/**
