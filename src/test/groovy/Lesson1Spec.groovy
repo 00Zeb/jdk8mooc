@@ -63,6 +63,7 @@ class Lesson1Spec extends Specification {
         //numbers.every {e -> outputBytes.toString().find(String.valueOf(e))}
         cleanup: "resets system out"
         System.setOut(originalOut)
+        System.out.println("output was:\n" + outputBytes.toString())
     }
 
 

@@ -10,6 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.concurrent.ExecutorCompletionService;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 import static java.util.stream.Collectors.joining;
 
@@ -97,7 +101,15 @@ public class Lesson1 {
 	 * @param numbers
 	 */
 	public void exercise5(List<Integer> numbers) {
-		
+		//TODO: better way with less boilerplate? Thread join?
+		ExecutorService es = Executors.newCachedThreadPool();
+		es.execute(() -> numbers.forEach(n -> System.out.println(n)));
+		es.shutdown();
+		try {
+			es.awaitTermination(1, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 	}
 
 	/**
