@@ -3,7 +3,7 @@ import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
 import spock.lang.Specification
 
-class WordManipulationSpec extends Specification {
+class Lesson1Spec extends Specification {
     List<String> words
     Lesson1 lesson1
 
@@ -32,9 +32,6 @@ class WordManipulationSpec extends Specification {
         then: "All words are upper cased."
         words == ["ALPHA", "BRAVO", "CHARLIE", "DELTA", "ECHO", "FOXTROT"]
     }
-}
-
-class Lesson1Spec extends Specification {
 
     def "exercise4"() {
         given: "A sorted map with some values"
