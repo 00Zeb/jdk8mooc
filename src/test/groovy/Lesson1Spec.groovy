@@ -1,6 +1,7 @@
 import lesson1.Lesson1
+import org.hamcrest.BaseMatcher
+import org.hamcrest.Description
 import spock.lang.Specification
-
 
 class WordManipulationSpec extends Specification {
     List<String> words
@@ -45,5 +46,43 @@ class Lesson1Spec extends Specification {
         def result = new Lesson1().exercise4(map);
         then: "Every key-value pair of the map is converted into a single string, in iteration (sorted) order."
         result == "a1b2c3"
+    }
+
+    def "exercise5"() {
+        given: "Some numbers and control of System Out."
+        ByteArrayOutputStream outputBytes = new ByteArrayOutputStream();
+        def originalOut = System.out
+        System.setOut(new PrintStream(outputBytes))
+        List<Integer> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        when: "exercise5 is called"
+        new Lesson1().exercise5(numbers);
+        then: "All numbers have been printed to system out"
+        //TODO: find better assertion that gives a nice Groovy assert clue.
+        outputBytes.toString().findAll("1-9]|10")
+        //outputBytes.toString() matches("1-9]|10")
+        //numbers.every {e -> outputBytes.toString().find(String.valueOf(e))}
+        cleanup: "resets system out"
+        System.setOut(originalOut)
+    }
+
+
+    private static class RegexMatcher extends BaseMatcher{
+        private final String regex;
+
+        public RegexMatcher(String regex){
+            this.regex = regex;
+        }
+
+        public boolean matches(Object o){
+            return ((String)o).matches(regex);
+        }
+
+        public void describeTo(Description description){
+            description.appendText("matches regex=");
+        }
+
+        public static RegexMatcher matches(String regex){
+            return new RegexMatcher(regex);
+        }
     }
 }

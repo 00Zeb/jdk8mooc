@@ -10,8 +10,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import static java.util.stream.Collectors.joining;
 
@@ -37,7 +35,7 @@ public class Lesson1 {
 		map.put("a", 1);
 		exercise4(map);
 		System.out.println("Running exercise 5 solution...");
-		exercise5();
+		exercise5(Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10));
 	}
 
 	/**
@@ -96,11 +94,10 @@ public class Lesson1 {
 	 * Exercise 5
 	 * 
 	 * Create a new thread that prints the numbers from the list.
+	 * @param numbers
 	 */
-	public void exercise5() {
-		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
-		/* YOUR CODE HERE */
+	public void exercise5(List<Integer> numbers) {
+		
 	}
 
 	/**
