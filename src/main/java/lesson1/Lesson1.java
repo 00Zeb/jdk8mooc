@@ -10,6 +10,10 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+import static java.util.stream.Collectors.joining;
 
 /**
  * @author Speakjava (simon.ritter@oracle.com)
@@ -83,7 +87,9 @@ public class Lesson1 {
 	 * @param map
 	 */
 	public String exercise4(Map<String, Integer> map) {
-		return null;
+		return map.entrySet().stream()
+				.map(e -> e.getKey() + e.getValue())
+				.collect(joining()).toString();
 	}
 
 	/**
