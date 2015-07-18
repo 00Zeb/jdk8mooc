@@ -68,7 +68,7 @@ public class Lesson1 {
 	 * @param words
 	 */
 	private void exercise3(List<String> words) {
-		words.replaceAll(word -> word.toUpperCase());
+		words.replaceAll(String::toUpperCase);
 	}
 
 	/**
