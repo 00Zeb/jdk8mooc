@@ -20,4 +20,13 @@ class Lesson1Spec extends Specification {
         then: "All words with odd lengths are removed from the original list."
         words == ["echo"]
     }
+
+    def "exercise3"() {
+        given: "A list with cool military words"
+        def words = ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot"]
+        when: "sending the words through the exercise 3 function"
+        new Lesson1().exercise3(words);
+        then: "All words are upper cased."
+        words == ["ALPHA", "BRAVO", "CHARLIE", "DELTA", "ECHO", "FOXTROT"]
+    }
 }

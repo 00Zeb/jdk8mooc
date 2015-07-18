@@ -25,7 +25,7 @@ public class Lesson1 {
 		System.out.println("Running exercise 2 solution...");
 		exercise2(new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot")));
 		System.out.println("Running exercise 3 solution...");
-		exercise3();
+		exercise3(new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot")));
 		System.out.println("Running exercise 4 solution...");
 		exercise4();
 		System.out.println("Running exercise 5 solution...");
@@ -65,10 +65,9 @@ public class Lesson1 {
 	 * Exercise 3
 	 * 
 	 * Replace every word in the list with its upper case equivalent.
+	 * @param words
 	 */
-	private void exercise3() {
-		List<String> list = new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot"));
-
+	private void exercise3(ArrayList<String> words) {
 		/* YOUR CODE HERE */
 	}
 
