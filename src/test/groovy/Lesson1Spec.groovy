@@ -35,8 +35,15 @@ class WordManipulationSpec extends Specification {
 
 class Lesson1Spec extends Specification {
 
-    def "empty"() {
-        expect:
-        true
+    def "exercise4"() {
+        given: "A sorted map with some values"
+        Map<String, Integer> map = new TreeMap<>();
+        map.put("c", 3);
+        map.put("b", 2);
+        map.put("a", 1);
+        when: "exercise4 is called"
+        def result = new Lesson1().exercise4(map);
+        then: "Every key-value pair of the map is converted into a single string, in iteration (sorted) order."
+        result == "a1b2c3"
     }
 }

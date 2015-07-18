@@ -27,7 +27,11 @@ public class Lesson1 {
 		System.out.println("Running exercise 3 solution...");
 		exercise3(new ArrayList<>(Arrays.asList("alpha", "bravo", "charlie", "delta", "echo", "foxtrot")));
 		System.out.println("Running exercise 4 solution...");
-		exercise4();
+		Map<String, Integer> map = new TreeMap<>();
+		map.put("c", 3);
+		map.put("b", 2);
+		map.put("a", 1);
+		exercise4(map);
 		System.out.println("Running exercise 5 solution...");
 		exercise5();
 	}
@@ -45,7 +49,7 @@ public class Lesson1 {
 	 * list of Strings provided.
 	 * @param strings
 	 */
-	private String exercise1(List<String> words) {
+	public String exercise1(List<String> words) {
 		StringBuilder sb = new StringBuilder();
 		words.forEach(element -> sb.append(element.charAt(0)));
 		return sb.toString();
@@ -57,7 +61,7 @@ public class Lesson1 {
 	 * Remove the words that have odd lengths from the list.
 	 * @param words
 	 */
-	private void exercise2(List<String> words) {
+	public void exercise2(List<String> words) {
 		words.removeIf(each -> each.length() % 2 != 0);
 	}
 
@@ -67,7 +71,7 @@ public class Lesson1 {
 	 * Replace every word in the list with its upper case equivalent.
 	 * @param words
 	 */
-	private void exercise3(List<String> words) {
+	public void exercise3(List<String> words) {
 		words.replaceAll(String::toUpperCase);
 	}
 
@@ -76,14 +80,10 @@ public class Lesson1 {
 	 * 
 	 * Convert every key-value pair of the map into a string and append them all
 	 * into a single string, in iteration order.
+	 * @param map
 	 */
-	private void exercise4() {
-		Map<String, Integer> map = new TreeMap<>();
-		map.put("c", 3);
-		map.put("b", 2);
-		map.put("a", 1);
-
-		/* YOUR CODE HERE */
+	public String exercise4(Map<String, Integer> map) {
+		return null;
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class Lesson1 {
 	 * 
 	 * Create a new thread that prints the numbers from the list.
 	 */
-	private void exercise5() {
+	public void exercise5() {
 		List<Integer> list = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
 		/* YOUR CODE HERE */
