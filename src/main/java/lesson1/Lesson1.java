@@ -67,8 +67,8 @@ public class Lesson1 {
 	 * Replace every word in the list with its upper case equivalent.
 	 * @param words
 	 */
-	private void exercise3(ArrayList<String> words) {
-		/* YOUR CODE HERE */
+	private void exercise3(List<String> words) {
+		words.replaceAll(word -> word.toUpperCase());
 	}
 
 	/**
