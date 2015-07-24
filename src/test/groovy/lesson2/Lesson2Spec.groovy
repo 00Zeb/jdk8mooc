@@ -11,6 +11,6 @@ class Lesson2Spec extends Specification {
 		when: "converting the words to uppercase"
 		new Lesson2(console).exercise1(words);
 		then: "The console should print all words in uppercase"
-		1 * console.println("[\"THE\", \"QUICK\", \"BROWN\", \"FOX\", \"JUMPED\", \"OVER\", \"THE\", \"LAZY\", \"DOG\"]")
+		1 * console.println(['THE', 'QUICK', 'BROWN', 'FOX', 'JUMPED', 'OVER', 'THE', 'LAZY', 'DOG'])
 	}
 }

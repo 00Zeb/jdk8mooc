@@ -58,8 +58,8 @@ public class Lesson2 {
  * @param words TODO
    */
   public void exercise1(List<String> words) {
-    List<String> list = words;
-    /* YOUR CODE HERE */
+    words.replaceAll(String::toUpperCase);
+    console.println(words);
   }
 
   /**
