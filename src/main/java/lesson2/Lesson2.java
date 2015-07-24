@@ -37,7 +37,8 @@ public class Lesson2 {
     exercise1(Arrays.asList(
 	        "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG"));
     System.out.println("Running exercise 2 solution...");
-    exercise2();
+    exercise2(Arrays.asList(
+	        "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG"));
     System.out.println("Running exercise 3 solution...");
     exercise3();
     System.out.println("Running exercise 4 solution...");
@@ -67,10 +68,10 @@ public class Lesson2 {
    *
    * Modify exercise 1 so that the new list only contains strings that have an
    * odd length
+ * @param words TODO
    */
-  private void exercise2() {
-    List<String> list = Arrays.asList(
-        "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
+  public void exercise2(List<String> words) {
+    List<String> list = words;
 
     /* YOUR CODE HERE */
   }
