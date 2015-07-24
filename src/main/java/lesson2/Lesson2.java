@@ -20,8 +20,13 @@ import java.util.stream.Stream;
  */
 public class Lesson2 {
   private static final String WORD_REGEXP = "[- .:,]+";
+  private final Console console;
 
-  /**
+  public Lesson2(Console console) {
+	this.console = console;
+}
+
+/**
    * Run the exercises to ensure we got the right answers
    *
    * @throws java.io.IOException
@@ -29,7 +34,8 @@ public class Lesson2 {
   public void runExercises() throws IOException {
     System.out.println("JDK 8 Lambdas and Streams MOOC Lesson 2");
     System.out.println("Running exercise 1 solution...");
-    exercise1();
+    exercise1(Arrays.asList(
+	        "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG"));
     System.out.println("Running exercise 2 solution...");
     exercise2();
     System.out.println("Running exercise 3 solution...");
@@ -49,11 +55,10 @@ public class Lesson2 {
    *
    * Create a new list with all the strings from original list converted to 
    * lower case and print them out.
+ * @param words TODO
    */
-  private void exercise1() {
-    List<String> list = Arrays.asList(
-        "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG");
-
+  public void exercise1(List<String> words) {
+    List<String> list = words;
     /* YOUR CODE HERE */
   }
 
@@ -135,7 +140,7 @@ public class Lesson2 {
    * @throws IOException If file access does not work
    */
   public static void main(String[] args) throws IOException {
-    Lesson2 lesson = new Lesson2();
+    Lesson2 lesson = new Lesson2(new Console());
     lesson.runExercises();
   }
 }
