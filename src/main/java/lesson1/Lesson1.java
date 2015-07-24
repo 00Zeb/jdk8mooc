@@ -16,7 +16,13 @@ import static java.util.stream.Collectors.joining;
  * @author Speakjava (simon.ritter@oracle.com)
  */
 public class Lesson1 {
-    /**
+    private final ExecutorService es;
+
+    public Lesson1(ExecutorService es) {
+		this.es = es;
+	}
+    
+	/**
      * Run the exercises to ensure we got the right answers
      */
     public void runExercises() {
@@ -96,15 +102,7 @@ public class Lesson1 {
      * @param numbers
      */
     public void exercise5(List<Integer> numbers) {
-        //TODO: better way with less boilerplate? Thread join?
-        ExecutorService es = Executors.newCachedThreadPool();
         es.execute(() -> numbers.forEach(n -> System.out.println(n)));
-        es.shutdown();
-        try {
-            es.awaitTermination(1, TimeUnit.SECONDS);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
     }
 
     /**
@@ -114,7 +112,7 @@ public class Lesson1 {
      *            the command line arguments
      */
     public static void main(String[] args) {
-        Lesson1 lesson = new Lesson1();
+        Lesson1 lesson = new Lesson1(Executors.newCachedThreadPool());
         lesson.runExercises();
     }
 }

@@ -1,15 +1,23 @@
+import java.util.concurrent.ExecutorService
+import java.util.concurrent.Executors
+import java.util.concurrent.TimeUnit;
+
 import lesson1.Lesson1
+
 import org.hamcrest.BaseMatcher
 import org.hamcrest.Description
+
 import spock.lang.Specification
 
 class Lesson1Spec extends Specification {
     List<String> words
     Lesson1 lesson1
+	ExecutorService es
 
     def setup() {
         words = ["alpha", "bravo", "charlie", "delta", "echo", "foxtrot"]
-        lesson1 = new Lesson1()
+		es = Executors.newCachedThreadPool();
+        lesson1 = new Lesson1(es)
     }
 
     def "exercise1"() {
@@ -34,12 +42,9 @@ class Lesson1Spec extends Specification {
     }
 
     def "exercise4"() {
-        given: "A sorted map with some values"
-        Map<String, Integer> map = new TreeMap<>();
-        map.put("c", 3);
-        map.put("b", 2);
-        map.put("a", 1);
-        when: "exercise4 is called"
+		given: "A sorted map with some values"
+		TreeMap<String, Integer> map = [c:3, a:1, b:2]
+		when: "exercise4 is called"
         def result = new Lesson1().exercise4(map);
         then: "Every key-value pair of the map is converted into a single string, in iteration (sorted) order."
         result == "a1b2c3"
@@ -52,17 +57,26 @@ class Lesson1Spec extends Specification {
         System.setOut(new PrintStream(outputBytes))
         List<Integer> numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         when: "exercise5 is called"
-        new Lesson1().exercise5(numbers);
+        lesson1.exercise5(numbers);
         then: "All numbers have been printed to system out"
-        //TODO: find better assertion that gives a nice Groovy assert clue.
+    	awaitThreadCompletion();
         outputBytes.toString().findAll("1-9]|10")
+        //TODO: find better assertion that gives a nice Groovy assert clue.
         //outputBytes.toString() matches("1-9]|10")
         //numbers.every {e -> outputBytes.toString().find(String.valueOf(e))}
-        cleanup: "resets system out"
+        cleanup: "Resets system out"
         System.setOut(originalOut)
         System.out.println("output was:\n" + outputBytes.toString())
     }
 
+	private void awaitThreadCompletion() {
+		es.shutdown();
+		try {
+			es.awaitTermination(1, TimeUnit.SECONDS);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 
     private static class RegexMatcher extends BaseMatcher {
         private final String regex;
