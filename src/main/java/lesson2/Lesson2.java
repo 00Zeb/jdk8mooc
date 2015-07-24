@@ -71,9 +71,8 @@ public class Lesson2 {
  * @param words TODO
    */
   public void exercise2(List<String> words) {
-    List<String> list = words;
-
-    /* YOUR CODE HERE */
+    List<String> oddLengthWords = words.stream().filter(w -> w.length() % 2 != 0).collect(Collectors.toList());
+    console.println(oddLengthWords);
   }
 
   /**

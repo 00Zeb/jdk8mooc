@@ -48,11 +48,11 @@ class Lesson2Spec extends Specification {
 			"LAZY",
 			"DOG"
 		]
-		when: "filtering strings with even length"
+		when: "filtering out strings with even length"
 		new Lesson2(console).exercise2(words);
-		then: "The console should print all words in uppercase"
+		then: "The console should print all words with odd length"
 		1 * console.println([
-			'Something'
+			'The', 'Quick', 'BROWN', 'Fox', 'The', 'DOG'
 		])
 	}
 }
