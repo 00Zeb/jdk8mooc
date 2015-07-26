@@ -95,7 +95,7 @@ public class Lesson2 {
   public void exercise4() throws IOException {
     try (BufferedReader reader = Files.newBufferedReader(
         Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
-      /* YOUR CODE HERE */
+    	console.println(reader.lines().count());
     }
   }
   
