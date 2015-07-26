@@ -85,8 +85,8 @@ public class Lesson2 {
    */
   public void exercise3(List<String> words) {
     List<String> list = words;
-
-    /* YOUR CODE HERE */
+    String secretWord = words.stream().skip(1).limit(3).collect(Collectors.joining("-"));
+	console.println(secretWord);
   }
 
   /**
