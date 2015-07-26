@@ -92,7 +92,7 @@ public class Lesson2 {
   /**
    * Count the number of lines in the file using the BufferedReader provided
    */
-  private void exercise4() throws IOException {
+  public void exercise4() throws IOException {
     try (BufferedReader reader = Files.newBufferedReader(
         Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
       /* YOUR CODE HERE */

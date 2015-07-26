@@ -66,4 +66,13 @@ class Lesson2Spec extends Specification {
 		then: "The secret string is printed to the console"
 		1 * console.println("quick-brown-fox")
 	}
+	
+	def "exercise 4"() {
+		given: "A console"
+		Console console = Mock()
+		when: "counting the number of lines in a file."
+		new Lesson2(console).exercise4()
+		then: "The correct number of lines is printed to the console."
+		1 * console.println(14)
+	}
 }
