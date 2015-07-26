@@ -40,7 +40,8 @@ public class Lesson2 {
     exercise2(Arrays.asList(
 	        "The", "Quick", "BROWN", "Fox", "Jumped", "Over", "The", "LAZY", "DOG"));
     System.out.println("Running exercise 3 solution...");
-    exercise3();
+    exercise3(Arrays.asList(
+	        "The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"));
     System.out.println("Running exercise 4 solution...");
     exercise4();
     System.out.println("Running exercise 5 solution...");
@@ -80,10 +81,10 @@ public class Lesson2 {
    *
    * Join the second, third and forth strings of the list into a single string,
    * where each word is separated by a hyphen (-). Print the resulting string.
+ * @param words TODO
    */
-  private void exercise3() {
-    List<String> list = Arrays.asList(
-        "The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog");
+  public void exercise3(List<String> words) {
+    List<String> list = words;
 
     /* YOUR CODE HERE */
   }

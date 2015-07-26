@@ -55,4 +55,15 @@ class Lesson2Spec extends Specification {
 			'The', 'Quick', 'BROWN', 'Fox', 'The', 'DOG'
 		])
 	}
+	
+	def "exercise 3"() {
+		given: "A list of words."
+		List<String> words = ["The", "quick", "brown", "fox", "jumped", "over", "the", "lazy", "dog"];
+		and: "A console."
+		Console console = Mock()
+		when: "when joining parts into a secret string."
+		new Lesson2(console).exercise3(words)
+		then: "The secret string is printed to the console"
+		1 * console.println("quick-brown-fox")
+	}
 }
