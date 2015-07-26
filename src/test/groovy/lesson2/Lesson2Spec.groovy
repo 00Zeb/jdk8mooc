@@ -75,4 +75,13 @@ class Lesson2Spec extends Specification {
 		then: "The correct number of lines is printed to the console."
 		1 * console.println(14)
 	}
+	
+	def "exercise 5"() {
+		given: "A console"
+		Console console = Mock()
+		when: "Getting removing duplicate strings from the file"
+		new Lesson2(console).exercise5()
+		then: "All distinct words are printed to the console"
+		1 * console.println("some words")
+	}
 }

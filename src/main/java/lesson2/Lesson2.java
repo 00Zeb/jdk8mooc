@@ -105,7 +105,7 @@ public class Lesson2 {
    * 
    * HINT: A regular expression, WORD_REGEXP, is already defined for your use.
    */
-  private void exercise5() throws IOException {
+  public void exercise5() throws IOException {
     try (BufferedReader reader = Files.newBufferedReader(
         Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
       /* YOUR CODE HERE */
