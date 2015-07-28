@@ -125,10 +125,12 @@ public class Lesson2 {
    * the file, converted to lower-case and with duplicates removed, which is
    * sorted by natural order.  Print the contents of the list.
    */
-  private void exercise6() throws IOException {
+  public void exercise6() throws IOException {
     try (BufferedReader reader = Files.newBufferedReader(
-        Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
-      /* YOUR CODE HERE */
+            Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
+      List<String> noDuplicateWordsAsLowerCase = reader.lines().flatMap(e -> Stream.of(e.split(WORD_REGEXP)))
+              .distinct().map(String::toLowerCase).collect(Collectors.toList());
+      console.println(noDuplicateWordsAsLowerCase);
     }
   }
   

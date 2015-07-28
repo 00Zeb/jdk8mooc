@@ -89,8 +89,8 @@ class Lesson2Spec extends Specification {
 		given: "A console"
 		Console console = Mock()
 		when: "Parsing the file contents"
-		new Lesson2(console).exercise5()
+		new Lesson2(console).exercise6()
 		then: "All words in the file are printed to the console in lowercase and only once."
-		1 * console.println("something")
+		1 * console.println(['from', 'fairest', 'creatures', 'we', 'desire', 'increase', 'that', 'thereby', 'beauty\'s', 'rose', 'might', 'never', 'die', 'but', 'as', 'the', 'riper', 'should', 'by', 'time', 'decease', 'his', 'tender', 'heir', 'bear', 'his', 'memory', 'thou', 'contracted', 'to', 'thine', 'own', 'bright', 'eyes', 'feed\'st', 'thy', 'light\'s', 'flame', 'with', 'self', 'substantial', 'fuel', 'making', 'a', 'famine', 'where', 'abundance', 'lies', 'thy', 'foe', 'sweet', 'too', 'cruel', 'thou', 'that', 'art', 'now', 'world\'s', 'fresh', 'ornament', 'and', 'only', 'herald', 'gaudy', 'spring', 'within', 'bud', 'buriest', 'content', 'churl', 'mak\'st', 'waste', 'in', 'niggarding', 'pity', 'world', 'or', 'else', 'this', 'glutton', 'be', 'to', 'eat', 'due', 'grave', 'and', 'thee'])
 	}
 }
