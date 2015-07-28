@@ -129,7 +129,7 @@ public class Lesson2 {
     try (BufferedReader reader = Files.newBufferedReader(
             Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
       List<String> noDuplicateWordsAsLowerCase = reader.lines().flatMap(e -> Stream.of(e.split(WORD_REGEXP)))
-              .distinct().map(String::toLowerCase).collect(Collectors.toList());
+              .distinct().map(String::toLowerCase).sorted().collect(Collectors.toList());
       console.println(noDuplicateWordsAsLowerCase);
     }
   }

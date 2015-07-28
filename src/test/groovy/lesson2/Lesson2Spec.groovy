@@ -91,6 +91,6 @@ class Lesson2Spec extends Specification {
 		when: "Parsing the file contents"
 		new Lesson2(console).exercise6()
 		then: "All words in the file are printed to the console in lowercase and only once, sorted in natural order."
-		1 * console.println("something")
+		1 * console.println(['a', 'abundance', 'and', 'and', 'art', 'as', 'be', 'bear', 'beauty\'s', 'bright', 'bud', 'buriest', 'but', 'by', 'churl', 'content', 'contracted', 'creatures', 'cruel', 'decease', 'desire', 'die', 'due', 'eat', 'else', 'eyes', 'fairest', 'famine', 'feed\'st', 'flame', 'foe', 'fresh', 'from', 'fuel', 'gaudy', 'glutton', 'grave', 'heir', 'herald', 'his', 'his', 'in', 'increase', 'lies', 'light\'s', 'mak\'st', 'making', 'memory', 'might', 'never', 'niggarding', 'now', 'only', 'or', 'ornament', 'own', 'pity', 'riper', 'rose', 'self', 'should', 'spring', 'substantial', 'sweet', 'tender', 'that', 'that', 'the', 'thee', 'thereby', 'thine', 'this', 'thou', 'thou', 'thy', 'thy', 'time', 'to', 'to', 'too', 'waste', 'we', 'where', 'with', 'within', 'world', 'world\'s'])
 	}
 }
