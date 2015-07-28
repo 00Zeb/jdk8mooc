@@ -140,7 +140,9 @@ public class Lesson2 {
   private void exercise7() throws IOException {
     try (BufferedReader reader = Files.newBufferedReader(
         Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
-      /* YOUR CODE HERE */
+      List<String> noDuplicateWordsAsLowerCase = reader.lines().flatMap(e -> Stream.of(e.split(WORD_REGEXP)))
+              .distinct().map(String::toLowerCase).sorted((o1, o2) -> Integer.compare(o1.length(), o2.length())).collect(Collectors.toList());
+      console.println(noDuplicateWordsAsLowerCase);
     }
   }
 
