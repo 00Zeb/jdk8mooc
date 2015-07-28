@@ -10,8 +10,7 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -108,8 +107,17 @@ public class Lesson2 {
   public void exercise5() throws IOException {
     try (BufferedReader reader = Files.newBufferedReader(
         Paths.get("SonnetI.txt"), StandardCharsets.UTF_8)) {
-      /* YOUR CODE HERE */
+      List<String> allWords = reader.lines().flatMap(e -> Stream.of(e.split(WORD_REGEXP))).collect(Collectors.toList());
+      Set<String> duplicates = findDuplicates(allWords);
+      List<String> distinct = allWords.stream().distinct().collect(Collectors.toList());
+      distinct.removeAll(duplicates);
+      console.println(distinct);
     }
+  }
+
+  private <T> Set<T> findDuplicates(Collection<T> list) {
+    Set<T> uniques = new HashSet<T>();
+    return list.stream().filter(e -> !uniques.add(e)).collect(Collectors.toSet());
   }
   
   /**
