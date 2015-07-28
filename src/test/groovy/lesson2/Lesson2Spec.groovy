@@ -84,4 +84,13 @@ class Lesson2Spec extends Specification {
 		then: "All words that occur only once in the file are printed to the console."
 		1 * console.println(['From', 'fairest', 'creatures', 'we', 'desire', 'increase', 'That', 'thereby', 'beauty\'s', 'rose', 'never', 'die', 'as', 'riper', 'should', 'time', 'decease', 'His', 'heir', 'bear', 'his', 'memory', 'thou', 'contracted', 'bright', 'eyes', 'Feed\'st', 'light\'s', 'flame', 'with', 'substantial', 'fuel', 'Making', 'a', 'famine', 'where', 'abundance', 'lies', 'Thy', 'foe', 'sweet', 'too', 'cruel', 'Thou', 'that', 'art', 'now', 'fresh', 'ornament', 'only', 'herald', 'gaudy', 'spring', 'Within', 'bud', 'buriest', 'content', 'churl', 'mak\'st', 'waste', 'in', 'niggarding', 'Pity', 'world', 'or', 'else', 'this', 'glutton', 'be', 'To', 'eat', 'due', 'grave', 'and', 'thee'])
 	}
+
+	def "exercise 6"() {
+		given: "A console"
+		Console console = Mock()
+		when: "Parsing the file contents"
+		new Lesson2(console).exercise5()
+		then: "All words in the file are printed to the console in lowercase and only once."
+		1 * console.println("something")
+	}
 }
