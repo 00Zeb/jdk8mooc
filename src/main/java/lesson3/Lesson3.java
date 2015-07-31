@@ -6,11 +6,9 @@
 package lesson3;
 
 import java.io.IOException;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.function.Supplier;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * @author Simon Ritter (@speakjava)
@@ -95,7 +93,7 @@ public class Lesson3 {
    * @throws IOException If word file cannot be read
    */
   public static void main(String[] args) throws IOException {
-    RandomWords fullWordList = new RandomWords();
+    RandomWords fullWordList = new RandomWords(Paths.get("words"));
     List<String> wordList = fullWordList.createList(1000);
 
     measure("Sequential", () -> computeLevenshtein(wordList, false));

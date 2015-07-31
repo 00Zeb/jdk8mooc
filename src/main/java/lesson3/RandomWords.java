@@ -8,11 +8,12 @@ package lesson3;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.nio.file.Files;
+import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
 
 /**
  * Class to generate a list of random words
@@ -22,13 +23,18 @@ import java.util.stream.Collectors;
 public class RandomWords {
   private final List<String> sourceWords;
 
-  /**
+  public RandomWords() throws IOException {
+	this(Paths.get("words"));
+  }
+
+/**
    * Constructor
+ * @param path TODO
    * 
    * @throws IOException If the source words file cannot be read
    */
-  public RandomWords() throws IOException {   
-    try (BufferedReader reader = Files.newBufferedReader(Paths.get("words"))) {
+  public RandomWords(Path path) throws IOException {   
+    try (BufferedReader reader = Files.newBufferedReader(path)) {
       sourceWords = null;    // YOUR CODE HERE
       
       System.out.println("Loaded " + sourceWords.size() + " words");
