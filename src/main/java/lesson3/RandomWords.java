@@ -14,6 +14,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
+import java.util.stream.Collectors;
 
 /**
  * Class to generate a list of random words
@@ -35,8 +36,7 @@ public class RandomWords {
    */
   public RandomWords(Path path) throws IOException {   
     try (BufferedReader reader = Files.newBufferedReader(path)) {
-      sourceWords = null;    // YOUR CODE HERE
-      
+      sourceWords = reader.lines().collect(Collectors.toList());
       System.out.println("Loaded " + sourceWords.size() + " words");
     }
   }
