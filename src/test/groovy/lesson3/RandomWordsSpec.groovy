@@ -24,5 +24,6 @@ class RandomWordsSpec extends Specification {
 		List<String> randomWords = randomWordGenerator.createList(3)
 		then: "There should be three elements in the list."
 		randomWords.size() == 3
+		System.out.println(randomWords)
 	}
 }

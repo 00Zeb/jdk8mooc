@@ -10,7 +10,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Random;
@@ -48,10 +47,10 @@ public class RandomWords {
    * @return The created list
    */
   public List<String> createList(int listSize) {
+	int sourceWordSize = sourceWords.size();
     Random rand = new Random();
-    List<String> wordList = null; // YOUR CODE HERE
-
-    return wordList;
+    List<String> randomWords = rand.ints().filter(e -> e > -1).limit(3).mapToObj(e -> sourceWords.get(e % sourceWordSize)).collect(Collectors.toList());
+    return randomWords;
   }
 
   /**
