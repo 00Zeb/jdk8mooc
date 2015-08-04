@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.function.Supplier;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @author Simon Ritter (@speakjava)
@@ -67,9 +69,10 @@ public class Lesson3 {
   static int[][] computeLevenshtein(List<String> wordList, boolean parallel) {
     final int LIST_SIZE = wordList.size();
     int[][] distances = new int[LIST_SIZE][LIST_SIZE];
-    
-    // YOUR CODE HERE
-    
+    Stream<String> stream = parallel ? wordList.parallelStream() : wordList.stream();
+    distances = stream  
+            .map(s1 -> wordList.stream().mapToInt(s2 -> Levenshtein.lev(s1, s2)).toArray())  
+            .toArray(int[][]::new);  
     return distances;
   }
   
