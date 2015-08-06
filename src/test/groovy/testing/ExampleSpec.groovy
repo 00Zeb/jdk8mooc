@@ -21,7 +21,9 @@ class ExampleSpec extends Specification {
 
 	def "my test"() {
 		given: 
+		Bar bar = Stub(Bar)
 		Foo foo = new Foo();
+		foo.bar = bar
 		when:
 		List<String> result = foo.getResult();
 		then:
